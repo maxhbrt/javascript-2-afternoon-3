@@ -130,10 +130,10 @@ function uniq(array, cb){
     for ( var k = i - 1 ;k >= 0; k--) {
         if(array[k] === array[i]){
           array.splice(i, 1);
-          break;
+          
         }
     }
-}  
+} cb(array); 
 }
 
 
@@ -153,7 +153,7 @@ uniq(names, function(uniqArr){
 */
 
 function each(arr, cb){
-for(let i =0; i <= arr.length; i++){
+for(let i = 0; i < arr.length; i++){
   cb(arr[i], i);
 }
 }
@@ -174,7 +174,7 @@ each(names, function(item, indice){
 */
 
 // Code here
-function getUserById(user, id, cd){
+function getUserById(users, id, cb){
   for(let i = 0; i< users.length; i++){
     if(users[i]["id"] === id){
       cb (users[i]);
